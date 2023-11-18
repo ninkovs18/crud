@@ -1,1 +1,30 @@
-
+#root {
+  background-color: rgba(225, 223, 221, 0.2);
+}
+.header {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(104, 104, 104, 0.2);
+}
+.ms-Grid-col {
+  padding-left: 0;
+  margin-left: 0;
+}
+.ms-Nav {
+  background-color: rgba(104, 104, 104, 0.2);
+}
+.ms-Nav-compositeLink .link-118 {
+  background-color: rgb(248, 198, 148);
+  color: black;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+.link-118::after {
+  border-left: 4px solid red;
+}
+.ms-Nav-compositeLink:hover .link-118 {
+  background-color: rgb(243, 198, 153);
+  color: black;
+}
