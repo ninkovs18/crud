@@ -1,0 +1,184 @@
+{
+  "persons": [
+    {
+      "id": 1,
+      "name": "Mika",
+      "surname": "Peric",
+      "userType": "Regular",
+      "createdDate": "10/08/2022",
+      "city": "Example City",
+      "address": "85 Main St"
+    },
+    {
+      "id": 2,
+      "name": "Laza",
+      "surname": "Zikic",
+      "userType": "Moderator",
+      "createdDate": "27/10/2021",
+      "city": "Example City",
+      "address": "541 Main St"
+    },
+    {
+      "id": 3,
+      "name": "Ana",
+      "surname": "Peric",
+      "userType": "Moderator",
+      "createdDate": "17/02/2020",
+      "city": "Example City",
+      "address": "699 Main St"
+    },
+    {
+      "id": 4,
+      "name": "Pera",
+      "surname": "Anic",
+      "userType": "Regular",
+      "createdDate": "01/10/2023",
+      "city": "Example City",
+      "address": "995 Main St"
+    },
+    {
+      "id": 5,
+      "name": "Laza",
+      "surname": "Lazic",
+      "userType": "Moderator",
+      "createdDate": "29/06/2023",
+      "city": "Example City",
+      "address": "110 Main St"
+    },
+    {
+      "id": 6,
+      "name": "Mika",
+      "surname": "Lazic",
+      "userType": "Admin",
+      "createdDate": "02/03/2020",
+      "city": "Example City",
+      "address": "966 Main St"
+    },
+    {
+      "id": 7,
+      "name": "Pera",
+      "surname": "Lazic",
+      "userType": "Guest",
+      "createdDate": "25/02/2021",
+      "city": "Example City",
+      "address": "320 Main St"
+    },
+    {
+      "id": 8,
+      "name": "Pera",
+      "surname": "Anic",
+      "userType": "Guest",
+      "createdDate": "06/06/2021",
+      "city": "Example City",
+      "address": "129 Main St"
+    },
+    {
+      "id": 9,
+      "name": "Pera",
+      "surname": "Anic",
+      "userType": "Admin",
+      "createdDate": "01/08/2020",
+      "city": "Example City",
+      "address": "85 Main St"
+    },
+    {
+      "id": 10,
+      "name": "Mika",
+      "surname": "Peric",
+      "userType": "Admin",
+      "createdDate": "06/04/2021",
+      "city": "Example City",
+      "address": "184 Main St"
+    },
+    {
+      "id": 11,
+      "name": "Laza",
+      "surname": "Zikic",
+      "userType": "Admin",
+      "createdDate": "30/04/2020",
+      "city": "Example City",
+      "address": "615 Main St"
+    },
+    {
+      "id": 12,
+      "name": "Mika",
+      "surname": "Lazic",
+      "userType": "Admin",
+      "createdDate": "28/10/2020",
+      "city": "Example City",
+      "address": "108 Main St"
+    },
+    {
+      "id": 13,
+      "name": "Pera",
+      "surname": "Anic",
+      "userType": "Guest",
+      "createdDate": "27/10/2023",
+      "city": "Example City",
+      "address": "572 Main St"
+    },
+    {
+      "id": 14,
+      "name": "Zika",
+      "surname": "Lazic",
+      "userType": "Moderator",
+      "createdDate": "29/03/2020",
+      "city": "Example City",
+      "address": "546 Main St"
+    },
+    {
+      "id": 15,
+      "name": "Ana",
+      "surname": "Peric",
+      "userType": "Moderator",
+      "createdDate": "09/09/2022",
+      "city": "Example City",
+      "address": "704 Main St"
+    },
+    {
+      "id": 16,
+      "name": "Laza",
+      "surname": "Anic",
+      "userType": "Regular",
+      "createdDate": "27/04/2022",
+      "city": "Example City",
+      "address": "24 Main St"
+    },
+    {
+      "id": 17,
+      "name": "Mika",
+      "surname": "Peric",
+      "userType": "Regular",
+      "createdDate": "29/08/2023",
+      "city": "Example City",
+      "address": "967 Main St"
+    },
+    {
+      "id": 18,
+      "name": "Zika",
+      "surname": "Lazic",
+      "userType": "Regular",
+      "createdDate": "05/08/2022",
+      "city": "Example City",
+      "address": "357 Main St"
+    },
+    {
+      "id": 19,
+      "name": "Pera",
+      "surname": "Lazic",
+      "userType": "Admin",
+      "createdDate": "09/01/2022",
+      "city": "Example City",
+      "address": "637 Main St"
+    },
+    {
+      "id": 20,
+      "name": "Laza",
+      "surname": "Peric",
+      "userType": "Guest",
+      "createdDate": "31/03/2022",
+      "city": "Example City",
+      "address": "684 Main St"
+    }
+  ]
+}
