@@ -1,33 +1,81 @@
-import * as React from "react";
+import { useState, useMemo } from "react";
 import {
   Dialog,
-  DialogType,
   DialogFooter,
   DialogContent,
 } from "@fluentui/react/lib/Dialog";
 import { PrimaryButton, DefaultButton } from "@fluentui/react/lib/Button";
-import { hiddenContentStyle, mergeStyles } from "@fluentui/react/lib/Styling";
-import { ContextualMenu } from "@fluentui/react/lib/ContextualMenu";
 import { useId, useBoolean } from "@fluentui/react-hooks";
 import { Label, TextField } from "@fluentui/react";
 
 const dialogStyles = { main: { maxWidth: 450 } };
-const screenReaderOnly = mergeStyles(hiddenContentStyle);
 
-const EditDialog = ({ user }) => {
-  const [userEdit, setUserEdit] = React.useState(user);
+const editIcon = {
+  iconName: "EditContact",
+  styles: { root: { fontSize: "25px", color: "blue" } },
+};
+const editStyle = {
+  root: {
+    border: "0px",
+    backgroundColor: "transparent",
+  },
+};
+
+const submitStyle = {
+  root: {
+    backgroundColor: "blue",
+    border: "0px",
+  },
+};
+
+const controlStyles = {
+  fieldGroup: {
+    selectors: {
+      ":focus-within": {
+        border: "2px solid rgb(137, 247, 11)",
+      },
+      "::after": {
+        border: "0px",
+      },
+    },
+  },
+};
+
+const EditDialog = ({ user, handleEdit }) => {
+  const { id, name, surname, userType, city, address } = user;
+  const [userEdit, setUserEdit] = useState({
+    id: id,
+    name: name,
+    surname: surname,
+    userType: userType,
+    city: city,
+    address: address,
+  });
+
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
   const labelId = useId("dialogLabel");
   const subTextId = useId("subTextLabel");
 
-  const handleEdit = () => {
+  const editOpen = () => {
     toggleHideDialog();
-    setUserEdit(user);
     console.log(user);
     console.log(userEdit);
   };
 
-  const modalProps = React.useMemo(
+  const onClickEdit = () => {
+    if (
+      userEdit.name === "" ||
+      userEdit.surname === "" ||
+      userEdit.userType === "" ||
+      userEdit.ciry === "" ||
+      userEdit.address === ""
+    )
+      return;
+    handleEdit(userEdit);
+    toggleHideDialog();
+  };
+
+  const modalProps = useMemo(
     () => ({
       titleAriaId: labelId,
       subtitleAriaId: subTextId,
@@ -36,40 +84,11 @@ const EditDialog = ({ user }) => {
     }),
     [labelId, subTextId]
   );
-  const editIcon = {
-    iconName: "EditContact",
-    styles: { root: { fontSize: "25px", color: "blue" } },
-  };
-  const editStyle = {
-    root: {
-      border: "0px",
-      backgroundColor: "transparent",
-    },
-  };
 
-  const submitStyle = {
-    root: {
-      backgroundColor: "blue",
-      border: "0px",
-    },
-  };
-
-  const controlStyles = {
-    fieldGroup: {
-      selectors: {
-        ":focus-within": {
-          border: "2px solid rgb(137, 247, 11)",
-        },
-        "::after": {
-          border: "0px",
-        },
-      },
-    },
-  };
   return (
     <div data-is-scrollable="true">
       <DefaultButton
-        onClick={handleEdit}
+        onClick={editOpen}
         iconProps={editIcon}
         styles={editStyle}
       />
@@ -141,7 +160,7 @@ const EditDialog = ({ user }) => {
         <DialogFooter>
           <PrimaryButton
             styles={submitStyle}
-            onClick={toggleHideDialog}
+            onClick={onClickEdit}
             text="Edit"
           />
           <DefaultButton onClick={toggleHideDialog} text="Close" />

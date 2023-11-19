@@ -29,7 +29,7 @@ const links = [
 
 const navigationStyles = {
   root: {
-    height: "100vh",
+    height: "90vh",
     boxSizing: "border-box",
     overflowY: "auto",
   },

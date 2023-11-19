@@ -1,25 +1,42 @@
-import * as React from "react";
+import { useMemo } from "react";
 import {
   Dialog,
-  DialogType,
   DialogFooter,
   DialogContent,
 } from "@fluentui/react/lib/Dialog";
 import { PrimaryButton, DefaultButton } from "@fluentui/react/lib/Button";
-import { hiddenContentStyle, mergeStyles } from "@fluentui/react/lib/Styling";
-import { ContextualMenu } from "@fluentui/react/lib/ContextualMenu";
 import { useId, useBoolean } from "@fluentui/react-hooks";
-import { Label, TextField } from "@fluentui/react";
 
 const dialogStyles = { main: { maxWidth: 450 } };
-const screenReaderOnly = mergeStyles(hiddenContentStyle);
+const deleteIcon = {
+  iconName: "Delete",
+  styles: { root: { fontSize: "25px", color: "red" } },
+};
+const deleteStyle = {
+  root: {
+    border: "0px",
+    backgroundColor: "transparent",
+  },
+};
 
-const DeleteDialog = ({ user }) => {
+const submitStyle = {
+  root: {
+    backgroundColor: "red",
+    border: "0px",
+  },
+};
+
+const DeleteDialog = ({ handleDelete }) => {
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
   const labelId = useId("dialogLabel");
   const subTextId = useId("subTextLabel");
 
-  const modalProps = React.useMemo(
+  const onClickDelete = () => {
+    handleDelete();
+    toggleHideDialog();
+  };
+
+  const modalProps = useMemo(
     () => ({
       titleAriaId: labelId,
       subtitleAriaId: subTextId,
@@ -28,23 +45,7 @@ const DeleteDialog = ({ user }) => {
     }),
     [labelId, subTextId]
   );
-  const deleteIcon = {
-    iconName: "Delete",
-    styles: { root: { fontSize: "25px", color: "red" } },
-  };
-  const deleteStyle = {
-    root: {
-      border: "0px",
-      backgroundColor: "transparent",
-    },
-  };
 
-  const submitStyle = {
-    root: {
-      backgroundColor: "red",
-      border: "0px",
-    },
-  };
   return (
     <div data-is-scrollable="true">
       <DefaultButton
@@ -63,10 +64,10 @@ const DeleteDialog = ({ user }) => {
         <DialogFooter>
           <PrimaryButton
             styles={submitStyle}
-            onClick={toggleHideDialog}
+            onClick={onClickDelete}
             text="Delete"
           />
-          <DefaultButton text="Close" />
+          <DefaultButton text="Close" onClick={toggleHideDialog} />
         </DialogFooter>
       </Dialog>
     </div>
