@@ -50,7 +50,7 @@ const comboBoxStyles = {
 
 function DisplayData() {
   const [data, setData] = useState([]);
-  const [search, setSeatch] = useState("");
+  const [search, setSearch] = useState("");
   const [type, setType] = useState("All");
 
   useEffect(() => {
@@ -215,7 +215,7 @@ function DisplayData() {
           <TextField
             label="Filter by name:"
             value={search}
-            onChange={(e) => setSeatch(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
             styles={controlStyles}
           />
           <ComboBox
